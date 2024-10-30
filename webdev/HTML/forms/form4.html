@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family:'Poppins' , sans-serif ;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: linen;
+        }
+        .loginbox{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            width: 440px;
+            height: 480px;
+            padding:30px;
+        }
+        .loginheader{
+            text-align: center;
+            margin: 20px 0 40px 0 ;
+        }
+        .loginheader header {
+            color: #333;
+            font-size: 30px ;
+            font-weight: 600;
+        }
+        .inputbox .inputfield{ 
+            width: 100%;
+            height: 60px;
+            font-size: 17px;
+            margin-bottom: 15px ;
+            border-radius: 30px;
+            padding: 0 20px; 
+            border: none;
+            box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 1);
+            outline: none;
+            transition: .3s;
+        }
+        ::placeholder{
+            font-weight: 600;
+            color: #222;
+        }
+        .inputfield:focus {
+            width: 105%;
+        }
+        .forgot{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;   
+        }
+        section{
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #555 ;
+        }
+        a{
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;  
+        }
+        section a{
+            color: #555 ;
+        }
+        .submit-button{
+            position: relative;
+        }
+        .submitbtn {
+            width: 100%;
+            height: 60px;
+            background: #222;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: .3s;
+        }
+        .submit-button label {
+            position: absolute;
+            top : 45% ;
+            left: 50% ;
+            color: #fff;
+            -webkit-transform: translate(-50% , -50%);
+            -ms-transform: translate(-50% , -50%);
+            transform: translate(-50% , -50%);   
+            cursor : pointer ;   
+        }
+        .submitbtn:hover {
+            background: #000;
+            transform: scale(1.05,1);
+        }
+        .signuplink {
+            text-align: center;
+            font-size: 15px;
+            margin-top: 30px;
+        }
+        .signuplink a {
+            color: #000;
+            font-weight: bold;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="loginbox">
+        <div class="loginheader">
+            <header>Login</header>
+        </div>
+        <div class="inputbox">
+            <input type="text" placeholder="Email" class="inputfield" autocomplete="off" required>
+        </div>
+        <div class="inputbox"> 
+            <input type="text" placeholder="Password" class="inputfield" autocomplete="off" required>
+        </div>
+        <div class="forgot">
+            <section>
+                <input type="checkbox" id="check">
+                <label for="check">Remember me</label>
+            </section>
+            <section>
+                <a href="#">Forgot Password</a>
+            </section>
+        </div>
+        <div class="submit-button">
+            <button class="submitbtn" id="submit"></button>
+            <label for="submit">Signin</label>
+        </div>
+        <div class="signuplink">
+            <p>Don't have an account? <a href="#">Sign Up</a></p>
+        </div>
+    </div>
+</body>
+</html>

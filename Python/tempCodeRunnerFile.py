@@ -1,0 +1,1 @@
+print( myLinkedList.pop_first() )
