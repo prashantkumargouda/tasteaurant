@@ -1,31 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Understanding JavaScript</title>
+    <title>getAttribute() Example</title>
 </head>
 <body>
-    <div id="codehelp">Welcome to CodeHelp</div>
 
-    <div class="welcome">Welcome to CodeHelp1</div>
-    <div class="welcome">Welcome to CodeHelp2</div>
-    <div id="codehelp3">Welcome to CodeHelp3</div>
-    <p class="welcome">Welcome to CodeHelp4</p>
-    <span class="welcome">Welcome to CodeHelp5</span>
+    <p id="demo" title="Example">This is a paragraph.</p>
 
-    <h3>Welcome to CodeHelp</h3>
+    <button onclick="getAttributeValue()">Get Attribute Value</button>
+
     <!-- <script>
-      //Let's Select the first element with classname = welcome
-      
-      let element = document.querySelector(".welcome");
-      
-      element.style.backgroundColor = "yellow";
-      
-      // In the above example:
-      // Welcome to CodeHelp1 will be selected
-      //and the background colour will be changed to "Yellow"
-      
-      </script> -->
+        function getAttributeValue() {
+            var para = document.getElementById("demo");
+            var titleAttributeValue = para.getAttribute("title");
+
+            alert("The value of the 'title' attribute is: " + titleAttributeValue); 
+
+            //Output : The value of the 'title' attribute is: Example Paragraph
+        }
+    </script> -->
 </body>
 </html>
