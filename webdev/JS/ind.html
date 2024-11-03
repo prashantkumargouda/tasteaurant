@@ -1,23 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>getAttribute() Example</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert Adjacent Element Before Begin</title>
 </head>
 <body>
 
-    <p id="demo" title="Example">This is a paragraph.</p>
+<div id="container">
+  <div id="existingElement">Existing Element</div>
+</div>
 
-    <button onclick="getAttributeValue()">Get Attribute Value</button>
+<script>
+  // Create a new element
+  var newElement = document.createElement("div");
+  newElement.textContent = "Welcome to CodeHelp";
 
-    <!-- <script>
-        function getAttributeValue() {
-            var para = document.getElementById("demo");
-            var titleAttributeValue = para.getAttribute("title");
+  // Get the reference to the existing element
+  var existingElement = document.getElementById("existingElement");
 
-            alert("The value of the 'title' attribute is: " + titleAttributeValue); 
+  // Insert the new element before the existing element
+  existingElement.insertAdjacentElement('beforebegin', newElement);
+</script>
 
-            //Output : The value of the 'title' attribute is: Example Paragraph
-        }
-    </script> -->
 </body>
-</html>
+</html> 
