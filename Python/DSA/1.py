@@ -36,7 +36,7 @@ class LinkedList :
         if self.length == 0 :
             return None 
         
-        temp = self.head 
+        temp = self.head    
         pre = self.head 
 
         while temp.next is not None :
@@ -75,7 +75,7 @@ class LinkedList :
         else :
             temp = self.head 
 
-            self.head = self.head.next 
+            self.head = self.head.next  
             temp.next = None 
 
             self.length -= 1 
