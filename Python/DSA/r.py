@@ -1,17 +1,16 @@
-# maximum element in a list 
+# find the number of occurence's of a number 
 
-l = [5,3,1,6,5]  # output 5 
+arr = [1,1,1,2,2,2,2,3,3,3,4] 
 
-max = 0 
+length = len(arr) 
 
+count = 0 
 
-for i in range(5) :
-    if( l[i] > max ) :
-        max = l[i]  # 5 - - 6 - 
-    
+value = int(input("Enter the value :"))  # 2 
 
-print(max) 
+for i in range(length) :
+    if( value == arr[i] ) :    # - - - 1 2 3 4 - - - - 
+        count += 1 
 
-
-
+print(count) 
 
