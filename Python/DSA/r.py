@@ -1,16 +1,45 @@
-# find the number of occurence's of a number 
+# with input 
 
-arr = [1,1,1,2,2,2,2,3,3,3,4] 
+# append 
 
-length = len(arr) 
 
-count = 0 
 
-value = int(input("Enter the value :"))  # 2 
+def inp( l , n ) :   # l , n are function arguments 
 
-for i in range(length) :
-    if( value == arr[i] ) :    # - - - 1 2 3 4 - - - - 
-        count += 1 
+    for i in range(n) :
+        value = int(input("Enter the element :")) 
 
-print(count) 
+        l.append(value) 
+
+def print_list( l , n ) :
+    for i in range(n) :
+        print(l[i]) 
+
+def maximum( l , n ) :
+    max = -1 
+
+    for i in range(n) :
+        if( l[i] > max ) :
+            max = l[i] 
+
+    print(max) 
+
+if __name__ == "__main__" :
+    l = [] 
+    n = int(input("Enter the no of elements :" ))   # 5 
+
+    inp( l , n ) 
+    print_list(l,n) 
+
+    maximum(l,n) 
+
+
+
+
+
+
+
+
+
+
 
