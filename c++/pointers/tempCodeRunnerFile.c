@@ -1,0 +1,1 @@
+printf("Value at *ptr = %d \n", *ptr);
