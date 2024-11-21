@@ -10,7 +10,6 @@ int maxsubarray(vector<int> arr) {
         int currSum = 0 ;
         for( int j=i+1 ; j<arr.size() ; j++ ) {
             currSum = currSum + arr[j] ;
-
             res = max( res , currSum ) ;
         }
     }
