@@ -1,13 +1,34 @@
+// bubble sort 
+
 #include <iostream>
 #include <vector> 
 using namespace std ;
 
-int max( vector<int> arr ) {
-    int currsum = 0;
-    int maxsum = 0 ;
+int bubble( vector<int> arr ) {
+    int n = arr.size() ;
 
-    
-} 
-int main() {
+    bool swapped  ;
 
+
+    for( int i=0 ; i< n-1 ; i++ ) {
+        swapped = false ;
+        for( int j=0 ; j < n - i-1 ; j++ ) {
+            if( arr[j] > arr[j+1] )  {
+                swap( arr[j] , arr[j+1] ) ;
+                swapped = true ;
+            }
+        }
+        if( !swapped ) {
+            break ;
+        }
+    }
+
+    for( int i=0 ; i< n ; i++ ) {
+        cout << arr[i] << " " ;
+    }
+}
+int main(){
+    vector<int> arr = { 2,3,4,1,10 }  ;
+    bubble(arr) ;
+    return 0 ;
 }
