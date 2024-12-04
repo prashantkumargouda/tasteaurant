@@ -1,34 +1,28 @@
-// bubble sort 
-
 #include <iostream>
 #include <vector> 
 using namespace std ;
 
-int bubble( vector<int> arr ) {
+int selection( vector<int> &arr ) {
     int n = arr.size() ;
 
-    bool swapped  ;
+    for( int i=0 ; i < n-1 ; i++ ) {
+        int minindex = i ;
 
-
-    for( int i=0 ; i< n-1 ; i++ ) {
-        swapped = false ;
-        for( int j=0 ; j < n - i-1 ; j++ ) {
-            if( arr[j] > arr[j+1] )  {
-                swap( arr[j] , arr[j+1] ) ;
-                swapped = true ;
+        for( int j=i+1 ; j< n ; j++ ) {
+            if( arr[minindex] > arr[j] ) {
+                minindex = j ;
             }
         }
-        if( !swapped ) {
-            break ;
-        }
+
+        swap( arr[minindex] , arr[i] ) ;
     }
 
-    for( int i=0 ; i< n ; i++ ) {
+    for( int i=0 ; i<n ; i++ ) {
         cout << arr[i] << " " ;
     }
 }
 int main(){
-    vector<int> arr = { 2,3,4,1,10 }  ;
-    bubble(arr) ;
-    return 0 ;
+    vector<int> arr = {2,3,1,4,0} ;
+    selection( arr ) ;
+    return 0 ; 
 }
