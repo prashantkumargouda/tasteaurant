@@ -184,7 +184,19 @@ void centre( Node* &head ) {
     
     cout << slow -> data << endl ;
 }
+void doubly(Node* &head) {
+    Node* prev = NULL ;
+    Node* curr = head ;
+    Node* temp = NULL ;
+    while (curr -> next != NULL) {
+        temp = curr -> next ;
+        curr -> next = prev ;
+        prev = curr ;
+        curr = temp ;
+    }   
 
+    
+}
 int main() {
 
     Node *Node1 = new Node(10) ;
@@ -198,7 +210,7 @@ int main() {
     // add_any( head , tail , 11 ,5 ) ;
     
     // reverse(head) ;
-    
+    doubly(head) ;
     display( head ) ;
     // rotate( head , 2) ;
     // duplicate(head) ;
