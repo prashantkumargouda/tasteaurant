@@ -1,35 +1,30 @@
-#include <iostream> 
+#include <iostream>
 using namespace std ;
 
-int binary( int *arr , int key , int s ,int e ) {
-    int start = s ;
-    int end = e ;
-    int mid = start + ( end - start ) / 2 ;
+int BinarySearch( int arr[] , int s , int e , int key ) {
+    if( s > e ) {
+        return -1 ;
+    }
 
-    if( start > end ) {
-        return 0 ;
+    int mid = s + ( e - s ) / 2 ; 
+
+    if( arr[mid] == key ) {
+        return 1 ;
     }
-    while( start <= end ) {
-        if( arr[mid] == key ) {
-            return 1 ;
-        }
-        else if( arr[mid] > key ) {
-            return binary( arr , key , start , mid - 1 ) ;
-        }
-        else { 
-            return binary( arr , key , mid + 1 , end ) ;
-        }
-        mid = start + ( end - start ) / 2 ;
+
+    if( arr[mid] > key ) {
+        return BinarySearch( arr , s , mid - 1, key ) ;
     }
-    
-}
-int main() {
-    int arr[5] = { 1,2,3,4,5 } ;
-    if( binary( arr , 1 , 0 , 5 )) {
-        cout << "found" << endl;
-    }
+
     else {
-        cout << "not found" << endl; 
+        return BinarySearch( arr , mid + 1 , e , key ) ;
     }
+}
+
+int main() {
+    int arr1[5] = { 1,2,3,4,5 } ;
+
+    cout << BinarySearch( arr1 , 0 , 4 , 6) << endl; 
+
     return 0 ;
 }
