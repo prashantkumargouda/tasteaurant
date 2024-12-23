@@ -1,32 +1,30 @@
-// bubble sort using recursion 
-
 #include <iostream>
+#include <vector>
 using namespace std ;
-
-void sortArray( int *arr , int n ) {
-
-    if( n==0 || n==1 ) {
-        return ;
-    } 
-
-    // trying to solve the case1 
-
-    for( int i=0 ; i<n-1 ; i++ ) {
+int bubble( vector<int>& arr , int n ) {
+    if( n == 1 ) {
+        return 1 ;
+    }
+    for( int i = 0 ; i < n - 1; i++ ) {
         if( arr[i] > arr[i+1] ) {
             swap( arr[i] , arr[i+1] ) ;
         }
     }
 
-    sortArray( arr , n-1 ) ;
+    bubble( arr , n-1 ) ; 
 }
-
 int main() {
-    int arr[5] = {2,5,1,6,9} ;
-    sortArray( arr , 5 ) ;
+    int n ;
+    cin >> n ;
+    vector<int> arr(n) ;
+    for( int i = 0 ; i < n ; i++ ) {
+        cin >> arr[i] ;
+    }
+    bubble( arr , n ) ;
 
-    for( int i =0 ; i<5 ; i++ ) {
-        cout << arr[i] << " " ; 
-    } 
-    cout << endl; 
+    for( int i = 0 ; i< n ; i++ ){
+        cout << arr[i] << " " ;
+    }
+    
     return 0 ;
 }
