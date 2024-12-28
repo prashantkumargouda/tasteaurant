@@ -27,6 +27,7 @@ int create( int x ) { // x = 1 2 3 4 5
     }
 }
 
+//traverse the linked list
 int display() {
     temp = head ;
     while( temp != NULL ) {
@@ -35,6 +36,7 @@ int display() {
     }
 }
 
+// insert at the front
 int add_front(int x) {
     struct Node* newnode = (struct Node*) malloc (sizeof(struct Node)) ;
     newnode -> data = x ;
