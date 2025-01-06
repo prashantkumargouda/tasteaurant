@@ -1,23 +1,24 @@
 #include <iostream>
-#include <string>
-#include <algorithm>
 using namespace std ;
 
 int main() {
-    string str1 , str2 ;
-    
-    cin >> str1 >> str2 ;
+    int n ;
+    cin >> n ;
 
-    string str3 ;
-    
-    for( int i = 0 ; i < str1.size() ; i++ ) {
-        if( str1[i] == str2[i] ) {
-            str3.push_back('0') ;
-        }
-        else {
-            str3.push_back('1') ;
-        }
+    int still = 0 ;
+    int capacity = 0 ;
+    for(int i=0 ; i< n ;i++ ) {
+        int a , b ;
+
+        cin >> a>> b ;
+
+        still -= a ;
+        still += b ;
+
+        capacity = max( capacity , still ) ;
     }
+
+    cout << capacity << endl;
     
-    cout << str3 << endl; 
+    return 0 ;
 }

@@ -13,7 +13,9 @@ int main() {
     q.push("Gouda") ;
 
     cout << "At front :" << q.front() << endl;
-    q.pop() ;
+    string s = q.front();
+    q.pop();
+    cout << "Popped element : " << s << endl;
     cout << "at front now :" <<q.front() << endl;
     cout << "size after pop : " << q.size() << endl;
 }
