@@ -121,6 +121,9 @@ void deletion( Node* &head  , int pos ) {
         delete curr ;
     }
 }
+
+
+
 int main() {
     Node *head = NULL ;
     Node *tail = NULL ; 

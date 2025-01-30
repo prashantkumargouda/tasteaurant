@@ -60,5 +60,8 @@ int main() {
         cout << i << " " ;
     } 
     cout << endl; 
+    cout << endl; 
+    cout << v[1] << endl; 
 
+    return 0 ;
 }
