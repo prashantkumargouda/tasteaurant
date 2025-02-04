@@ -1,4 +1,5 @@
 #include <iostream>
+#include <map> 
 using namespace std ;
 
 class Node {
@@ -120,6 +121,101 @@ void deletion( Node* &head  , int pos ) {
         curr -> next = NULL ;
         delete curr ;
     }
+}
+
+bool isCircular(Node* &head) {
+    if( head == nullptr ) {
+        return head ;
+    }
+
+    Node* temp = head -> next ;
+
+    while( temp != NULL && temp != head ) {
+        temp = temp -> next ;
+    }
+
+    if( temp == head ) {
+        return true ;
+    } 
+
+    return false ;
+}
+
+Node* floyd(Node* &head) {
+    if( head == NULL ) {
+        return NULL ;
+    }
+
+    Node* slow = head ;
+    Node* fast = head ;
+
+    while( slow != nullptr && fast != NULL ) {
+        slow = slow -> next ;
+        fast = fast -> next  ;
+
+        if( fast != NULL ) {
+            fast = fast -> next ;
+        }
+
+        if( slow == fast ) {
+            return slow ;
+        }
+    }
+
+    return NULL ;
+}
+
+bool detectLoop2(Node* &head) {
+    if( head == nullptr ) {
+        return head ;
+    }
+
+    map<Node* , bool> visited ;
+
+    Node* temp = head ;
+    
+    while( temp != nullptr ) {
+        if(visited[temp] == true) {
+            return true ;
+            break ;
+        }
+        visited[temp] = true ;
+        temp = temp -> next ;
+    }
+
+    return false ;
+}
+
+Node* getStartingNode(Node* &head) {
+    if( head == NULL ) {
+        return NULL ;
+    }
+
+    Node* slow = head ;
+    Node* intersection = floyd(head) ;
+
+    while( slow != intersection ) {
+        slow = slow -> next ;
+        intersection = intersection -> next ;
+    }
+
+    return slow ;
+}
+
+void removeLoop(Node* &head) {
+    Node* start = getStartingNode(head) ;
+    Node* temp = start ;
+
+    while( temp->next != start ) {
+        temp = temp -> next ;
+    }
+
+    temp -> next = NULL ;
+}
+
+void deleteNodewithoutHead(Node* node) {
+    node -> data = node -> next -> data ;
+    node -> next = node -> next -> next ;
 }
 
 

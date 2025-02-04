@@ -18,14 +18,16 @@
 
 #navList {
     list-style-type: none ;
-
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px ;
+    align-items: center;
 }
 
 #navLogo {
     font-size: 1.5rem;
     font-weight: bold;
     color: #000000;
-    text-decoration: none;
-    margin-left: 20px;   
-    
+    text-decoration: none;    
 }

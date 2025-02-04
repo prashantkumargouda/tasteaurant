@@ -1,27 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert Adjacent Element Before Begin</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
+  <p id="fpara" class="textMatter" >First ParaGraph</p>
+  <p id="spara" class="textMatter">Second Paragraph</p>
 
-<div id="container">
-  <div id="existingElement">Existing Element</div>
-</div>
+  <h1 id="fheading" class="textMatter">First Heading</h1>
 
-<!-- <script>
-  // Create a new element
-  var newElement = document.createElement("div");
-  newElement.textContent = "Welcome to CodeHelp";
+  <div class="welcome">Welcome to CodeHelp1</div> 
+  <div class="welcome">Welcome to CodeHelp2</div> 
 
-  // Get the reference to the existing element
-  var existingElement = document.getElementById("existingElement");
+  <p id="myPara">
+    This element has     <span>spacing</span>
+    <p style="display : none">This has a property hidden</p> 
+  </p>
 
-  // Insert the new element before the existing element
-  existingElement.insertAdjacentElement('beforebegin', newElement);
-</script> -->
+  <div id="innerT">
+    this element has      <span>spacing</span>
 
+    <p style="display : None">This also has a property hidden</p>
+  </div>
+
+  <script>
+    // let element = document.getElementById("fpara") ;
+    // element.style.backgroundColor = "#FFD700" ;
+
+    // let element2 = document.getElementsByClassName("textMatter") ;
+    // element2[1].style.backgroundColor = "red" ;
+    // element2[2].style.backgroundColor = "blue" ;    
+
+    // let element = document.querySelector(".welcome") ;
+    // element.style.backgroundColor = "yellow" ;
+
+    // // querrySelectorAll() returns NodeList which contains all the elemets with the specified selectors 
+
+    // let elements = document.querySelectorAll(".welcome") ;
+    // elements[0].style.backgroundColor = "green" ;
+    // elements[1].style.backgroundColor = "indigo" ;
+
+    ////// innerHTML use to access the contents of a doc so retrive and replace the HTML content 
+
+    // let element = document.getElementById("myPara") ;
+    // // let content = element.innerHTML ;
+
+    // // console.log(content) ;
+    
+    // mynewpara = "HELLO WORLD!!!" ;
+
+    // element.innerHTML = mynewpara ;
+    // let content = element.innerHTML ;
+    // console.log(content) ;
+
+    // // innerText 
+
+    // let element = document.getElementById("innerT") ;
+    // // let content = element.innerText ;
+
+    // // console.log(content) ;
+
+    // newcon = "namasteduniya" ;
+
+    // element.innerText = newcon ;
+
+    // let content = element.innerText ;
+
+    // console.log(content) ;
+
+    //// outer HTML 
+
+    // let element = document.getElementById("innerT") ;
+
+    // let content = element.outerHTML ;
+
+    // console.log(content) ;
+
+
+    // textContent 
+
+    // let element = document.getElementById("myPara") ;
+
+    // let content = element.textContent ;
+
+    // console.log(content) ;
+
+    // createElement Method
+
+    // creating new element using tag name as the single argument 
+
+    // let element = document.createElement("p") ;
+    // console.log(element) ;
+
+    // // using textcontent to modify the content of the newly created div 
+
+    // let element = document.createElement("p") ;
+    // element.textContent = "hello world" ;
+    // console.log(element) ;
+
+    // append child 
+
+    // let paragraph = document.createElement('p') ;
+    // paragraph.textContent = 'hello world' ;
+
+    // document.body.appendChild(paragraph) ;
+
+    // creating text nodes 
+
+    
+  
+
+    
+    
+    
+
+
+  </script>
 </body>
-</html> 
+</html>

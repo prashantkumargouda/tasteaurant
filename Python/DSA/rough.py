@@ -105,34 +105,12 @@ class LinkedList :
 
         return self.head
 
-    def detectingcycle(self) :
-        if not(self.head and self.head.next) :
-            return
-
-        slow = self.head
-        fast = self.head
-
-        flag = True
-
-        while fast and fast.next :
-            slow = slow.next
-            fast = fast.next.next
-
-            if slow == fast :
-                flag = False
-                break
-
-
-        if not(flag) :
+    def isCircular(self) :
+        if self.head == None :
             return True
-        else :
+
+        if self.head.next == None :
             return False
-
-    def isCircularList(self) :
-        if not(self.head and self.head.next) :
-            return self.head
-
-        temp = self.head
 
         temp = self.head.next
 
@@ -144,11 +122,52 @@ class LinkedList :
 
         return False
 
-    def removeLoop(self):
+    def floyd(self) :
+        if self.head is None :
+            return None
+
+        slow = self.head
+        fast = self.head
+
+        while fast is not None and fast.next is not None :
+            slow = slow.next
+
+            fast = fast.next
+            if fast is not None :
+                fast = fast.next
+
+            if( fast == slow ) :
+                return True
 
 
+        return False
 
-        
+    def getStartNode(self) :
+        if( self.head == None ) :
+            return None
+        intersection = self.floyd()
+
+        slow = self.head
+
+        while slow != intersection :
+            slow = slow.next
+            intersection = intersection.next
+
+        return slow
+
+    def removeLoop(self) :
+        if( self.head == None ) :
+            return
+
+        start = self.getStartNode()
+        temp = start
+
+        while temp.next != start :
+            temp = temp.next
+
+        temp.next = None
+
+
 
 
 
