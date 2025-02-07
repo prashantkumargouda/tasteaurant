@@ -195,9 +195,10 @@ void doubly(Node* &head) {
         prev = curr ;
         curr = temp ;
     }   
-
-    
 }
+
+
+
 int main() {
 
     Node *Node1 = new Node(10) ;
