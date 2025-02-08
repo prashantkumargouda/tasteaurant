@@ -11,7 +11,7 @@ public :
         this -> next = NULL ;
     }
     // checking for git
-    // destructor
+    // destructor for linked list 
     ~Node() {
         int value = this -> data ;
         // memory free 
