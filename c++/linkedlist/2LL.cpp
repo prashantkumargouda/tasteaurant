@@ -197,6 +197,7 @@ void doubly(Node* &head) {
     }   
 }
 
+void reverseinK()
 
 
 int main() {

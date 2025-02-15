@@ -16,7 +16,7 @@ class LinkedList :
         temp = self.head 
 
         while temp is not None :
-            print(temp.data) 
+            print(temp.data,end=" " )
             temp = temp.next 
 
     def append(self,value) :
@@ -159,9 +159,29 @@ class LinkedList :
             temp.next = before
 
             before = temp 
-            temp = after 
-        
-mylinkedlist = LinkedList(10) 
+            temp = after
+
+    def swap(self):
+        if not self.head or not self.head.next:
+            return
+
+        prev = None
+        curr = self.head
+        self.head = curr.next  # Update head to the second node
+
+        while curr and curr.next:
+            new = curr.next
+            curr.next = new.next
+            new.next = curr
+
+            if prev:
+                prev.next = new
+
+            prev = curr
+            curr = curr.next
+
+
+mylinkedlist = LinkedList(10)
 mylinkedlist.append(20)
 mylinkedlist.append(30)
 mylinkedlist.append(40)
@@ -176,6 +196,11 @@ mylinkedlist.prepend(9)
 mylinkedlist.reverse() 
 
 mylinkedlist.print_list() 
+print() 
+
+mylinkedlist.swap() 
+mylinkedlist.print_list() 
+
 
 
 

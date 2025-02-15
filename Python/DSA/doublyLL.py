@@ -1,94 +1,174 @@
-# doubly linked list 
+# trying out doubly linked list
+
 class Node :
     def __init__(self,data) :
         self.data = data
-        self.next = None 
-        self.prev = None 
+        self.next = None
+        self.prev = None
 
 class LinkedList :
     def __init__(self,data) :
-        newnode = Node(data) 
+        newnode = Node(data)
+        self.head = newnode
+        self.tail = newnode
 
-        self.head = newnode 
-        self.tail = newnode 
+        self.length = 1
 
-        self.length = 1 
+    def insertbegin(self,data) :
+        newnode = Node(data)
 
-    def print_list(self) :
-        temp = self.head 
+        if self.head is None :
+            return newnode
+
+        newnode.next = self.head
+        self.head.prev = newnode
+
+        self.head = newnode
+
+        return newnode
+
+
+    def insertEnd(self,data) :
+        newnode = Node(data)
+
+        if self.head is None :
+            return newnode
+
+        temp = self.head
+
+        while temp.next is not None :
+            temp = temp.next
+
+        temp.next = newnode
+        newnode.prev = temp
+
+        return self.head
+
+    def insertrandom(self,data,key) :
+        newnode = Node(data)
+
+        if self.head is None :
+            self.head = newnode
+            return
+
+        temp = self.head
 
         while temp is not None :
-            print( temp.data , end = " " ) 
-            temp = temp.next 
+            if temp.data == key :
+                break
 
-    def insertBegin(self,head,value) :
-        newnode = Node(value) 
+            temp = temp.next
 
-        if head!=None :
-            head.prev = newnode 
-            newnode.next = head 
+        newnode.next = temp.next
+        newnode.next.prev = newnode
+        temp.next = newnode
+        newnode.prev = temp
 
-        return newnode 
+        return self.head
 
-    def insertEnd(self,value,head) :
-        newnode = Node(value) 
-        
-        if( head == None ) :
-            return newnode 
-        
-        temp = head 
+    def deletefront(self) :
+        if not(self.head and self.head.next) :
+            return
+
+        temp = self.head
+        self.head = self.head.next
+        temp = None
+
+    def deleteend(self) :
+        if not(self.head and self.head.next) :
+            return
+
+        temp = self.head
         while temp.next is not None :
-            temp = temp.next 
+            temp = temp.next
 
-        temp.next = newnode 
-        newnode.prev = temp 
+        temp.prev.next = None
 
-        return head
- 
-    def deleteHead(self,value) :
-        if self.head is None :
-            return None 
-        
-        if self.head.next is None :
-            return None 
-        
-        else :
-            self.head = self.head.next 
-            self.head.prev = None 
+        return self.head
 
+    def deleterandom(self,key) :
+        if not(self.head and self.head.next) :
             return self.head
 
-    def deleteLast(self,head) :
+        temp = self.head
+
+        while temp is not None :
+            if( temp.data == key ) :
+                break
+            temp = temp.next
+
+        deleteNode = temp.next
+        temp.next = deleteNode.next
+        deleteNode.prev = temp
+
+        deleteNode = None
+
+        return self.head
+
+    def isCircular(self) :
+        if self.head == None :
+            return True
+
+        if self.head.next == None :
+            return False
+
+        temp = self.head.next
+
+        while temp is not None and temp != self.head :
+            temp = temp.next
+
+        if temp == self.head :
+            return True
+
+        return False
+
+    def floyd(self) :
         if self.head is None :
-            return None 
-        if self.head.next is None :
-            return None 
-        
-        else :
-            temp = self.head 
+            return None
 
-            while temp.next.next is not None :
-                temp = temp.next 
+        slow = self.head
+        fast = self.head
 
-            temp.next = None 
+        while fast is not None and fast.next is not None :
+            slow = slow.next
 
-            return head 
-    def reverse(head) :
-        if head == None :
-            return None 
-        if head.next == None :
-            return head 
+            fast = fast.next
+            if fast is not None :
+                fast = fast.next
 
-        curr = head 
-        prev = None 
+            if( fast == slow ) :
+                return True
 
-        while curr.next != None :
-            curr = prev 
-            curr.next , curr.prev = curr.prev , curr.next 
 
-            curr = curr.prev 
+        return False
 
-        return prev 
-         
+    def getStartNode(self) :
+        if( self.head == None ) :
+            return None
+        intersection = self.floyd()
 
-    
+        slow = self.head
+
+        while slow != intersection :
+            slow = slow.next
+            intersection = intersection.next
+
+        return slow
+
+    def removeLoop(self) :
+        if( self.head == None ) :
+            return
+
+        start = self.getStartNode()
+        temp = start
+
+        while temp.next != start :
+            temp = temp.next
+
+        temp.next = None
+
+
+
+
+
+

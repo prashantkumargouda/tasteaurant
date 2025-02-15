@@ -36,6 +36,16 @@ class Tree :
         self.printInorder(curr.right)
 
 
+    def inorder(self,curr) :
+        result = []
+        self.inorder_rec(self.root,result)
+
+    def inorder_rec(self,curr,result):
+        if curr :
+            self.inorder_rec(curr.left,result)
+            result.append(curr.data)
+            self.inorder_rec(curr.right,result)
+
 
 
 
@@ -44,6 +54,9 @@ root = t1.insert(20)
 t1.insert(15)
 t1.insert(18)
 t1.insert(17)
+t1.insert(10)
+t1.insert(19)
 
+##[10,15,17,18,19,20,25]
 t1.printInorder(root)
 
