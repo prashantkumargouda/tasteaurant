@@ -14,7 +14,7 @@
     width: 100vw;
     min-height: 150px;
     background-color: #c40e0e;
-background-image: linear-gradient(62deg, #c40e0e 0%, #F7CE68 100%);
+    background-image: linear-gradient(62deg, #c40e0e 0%, #F7CE68 100%);
 
 
     display: flex;
@@ -56,7 +56,7 @@ a{
 
 .footerBox{
     background-color: #c40e0e;
-background-image: linear-gradient(62deg, #c40e0e 0%, #F7CE68 100%);
+    background-image: linear-gradient(62deg, #c40e0e 0%, #F7CE68 100%);
 
     
     width: 100%;
