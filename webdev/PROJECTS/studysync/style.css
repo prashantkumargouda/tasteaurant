@@ -118,7 +118,7 @@ body{
     max-width: 1280px;
     display: flex;
     flex-direction: column ;
-    gap: 6rem;
+    gap: 5rem;
     padding: 0.6rem;
     margin: 0 auto;
     align-items: center ;
@@ -205,7 +205,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 80px;
+    margin-left: 90px;
     
 }
 
@@ -214,6 +214,7 @@ body{
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     height: 50vh;
+    margin-left: 40px;
 }
 
 .section-image{
@@ -224,7 +225,7 @@ body{
 @media screen and (min-width: 768px) {
     .main-section{
         flex-direction: row;
-        padding-left: 80px;
+        padding-left: 40px;
     }
 
     .content-left {
@@ -255,6 +256,40 @@ body{
         color: var(--dark-gray);
     }
     
+}
+.dropdown{
+    display: inline-block;
+   
+}
+.dropdown button{
+    background-color: hsl(0, 0%, 80%);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    
+}
+.dropdown a{
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+.dropdown .conten{
+    display: none;
+    position: absolute;
+    background-color: hsl(0, 0%, 95%);
+    min-width: 100px;
+    box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.8);
+}
+.dropdown:hover .conten{
+    display: block;
+}
+.dropdown:hover button{
+    background-color: hsl(0, 0%, 70%);
+}
+.dropdown a:hover{
+    background-color: hsl(0, 0%, 90%);
 }
 
 .company-container{
@@ -480,9 +515,9 @@ body{
     flex-direction: column;
     gap: 2rem;
     padding: 0.6rem;
-    justify-content: center;
+    justify-content:center ;
     align-items: center;
-    margin: 0 auto;
+    margin: auto auto;
     padding-bottom: 50px;
 }
 
@@ -705,3 +740,5 @@ ul{
         grid-template-columns: repeat(2,1fr);
     }
 }
+
+
