@@ -205,6 +205,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 70px;
 }
 
 .img-container {
@@ -605,6 +606,8 @@ body{
     display: flex;
     flex-direction: column;
     gap: 1.65rem;
+    margin-left: 200px;
+    margin-top: 120px;
 }
 
 .logo-svg{
