@@ -4,25 +4,26 @@ class Node :
         self.left = None
         self.right = None
 
-    def PrintTree(self) :
-        print(self.data)
+    def insert(self,key):
+        if self.data :
+            if self.data > key :
+                if self.left is None :
+                    self.left = Node(key)
+
+                else :
+                    self.insert(key)
+
+            elif self.data < key :
+                if self.right is None :
+                    self.right = Node(key)
+                else :
+                    self.insert(key)
+
+        else :
+            self.data = key
 
 
-root = Node(10)
-root.PrintTree()
-
-
-
-
-
-
-
-
-
-
-
-
-
+    def
 
 
 

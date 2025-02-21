@@ -19,7 +19,6 @@ class Node :
 
                 else :
                     self.rchild.insert(key)
-
         else :
             self.data = key
     def PrintTree(self) :

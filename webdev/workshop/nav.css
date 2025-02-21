@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+
+    background-color: beige;
+}
+
+.navbar {
+    border: 1px solid black;
+    height: 150px;
+    width: 100%;
+    background-color: rgb(247, 182, 182);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 50px;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: black;
+}
+
+.navbar li{
+    list-style-type: none;
+}
+
+.navbar ul{
+    display: flex;
+    gap: 20px;
+}
