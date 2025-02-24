@@ -38,7 +38,7 @@ body{
     display: flex ;
     justify-content: space-around;
     margin: 0  auto;
-    margin-bottom: 2rem;
+    margin-bottom: 10px;
     max-width: 1280px;
     align-items: center;
     padding:1rem;
@@ -114,6 +114,27 @@ body{
     
 }
 
+.main-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+}
+
 .main-content h1{
     font-size: 3rem;
+    margin-bottom: 50px;
 }
+
+.main-content h2 {
+    margin-bottom: 20px;
+}
+
+.main-content p {
+    margin-bottom: 50px;
+    width: 55%;
+}
+
+
